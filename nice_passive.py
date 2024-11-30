@@ -28,7 +28,7 @@ def get_hostname(url):
         return url
 
 def good_url(url):
-    extensions = ['.json', '.js', '.tff', '.ogg', '.css', '.jpg', '.jpeg', '.png', '.svg', '.img', '.gif', '.exe', '.mp4', '.flv', '.pdf', '.doc', '.ogv', '.webm', '.wmv', '.webp', '.mov', '.mp3']
+    extensions = ['.json', '.js', '.tff', '.ogg', '.css', '.jpg', '.jpeg', '.png', '.svg', '.img', '.gif', '.exe', '.mp4', '.flv', '.pdf', '.doc', '.ogv', '.webm', '.wmv', '.webp', '.mov', '.mp3', '.m4a', '.m4p', '.ppt', '.pptx', '.scss', '.tif', '.tiff', '.ttf', '.otf', '.woff', '.woff2', '.bmp', '.ico', '.eot', '.htc', '.swf', '.rtf', '.image', '.rf', '.txt', 'xml', 'zip']
     
     try:
         parsed_url = urlparse(url)
@@ -83,7 +83,7 @@ def run_nice_passive(domain):
             return False
         res = run_command_in_zsh(command)
 
-    print(f"{colors.GRAY}merging result for: {domain}{colors.GRAY}")
+    print(f"{colors.GRAY}merging results for: {domain}{colors.GRAY}")
     res = finalize(temp_file, domain)
 
     res_num = len(res) if res else 0
